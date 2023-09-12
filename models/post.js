@@ -11,15 +11,14 @@ const postSchema = new Schema({
     },
     zipcode: {
         type: String,
-        default: ['CAL']
     },
     when: {
         type: Date,
         default: function () {
             return new Date();
         },
+        timestamps: true
     },
-
 });
 
 // Compile the schema into a model and export it
