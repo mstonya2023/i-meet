@@ -4,21 +4,27 @@ const Schema = mongoose.Schema;
 
 
 const postSchema = new Schema({
-    interests: {
+    
+    user: {
         type: Schema.Types.ObjectId,
-        enum: ['Bike Riding', 'Movies', 'Wine-tasting', 'Comedy Shows'],
-        default: ['n/a']
+        ref: 'User'
     },
+    interests: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Interest'
+    }],
     zipcode: {
         type: String,
+        match: /\d{5}/
     },
     when: {
         type: Date,
         default: function () {
             return new Date();
         },
-        timestamps: true
-    },
+    }
+}, {
+    timestamps: true
 });
 
 // Compile the schema into a model and export it
