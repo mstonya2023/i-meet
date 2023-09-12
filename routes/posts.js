@@ -3,6 +3,6 @@ var router = express.Router();
 const postsCtrl = require('../controllers/posts');
 
 
-router.post('/imeet', postsCtrl.create)
+router.post('/posts', postsCtrl.create)
 
 module.exports = router;
