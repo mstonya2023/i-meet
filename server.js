@@ -14,7 +14,7 @@ require('./config/passport');
 
 
 var indexRouter = require('./routes/index');
-var imeetRouter = require('./routes/imeet');
+var interestsRouter = require('./routes/interests.js');
 var postRouter = require('/routes/post');
 
 var app = express();
@@ -46,7 +46,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/imeet', imeetRouter);
+app.use('/interests', interestsRouter);
 app.use('post', postRouter);
 
 // catch 404 and forward to error handler
