@@ -1,6 +1,16 @@
+*{
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+
 body {
+  margin: 0;
+  height: 5vh;
+  display: grid;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image:;
 }
 
 a {
@@ -8,8 +18,8 @@ a {
 }
 .login {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
   height: 34px;
 }
 

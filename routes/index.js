@@ -16,7 +16,7 @@ router.get('/auth/google', passport.authenticate(
     // Optionally force pick account every time
     // prompt: "select_account"
     successRedirect: '/imeet',
-    failureRedirect: '/immet'  
+    failureRedirect: '/imeet'  
   }
 ))// OAuth logout route
 router.get('/logout', function(req, res){
