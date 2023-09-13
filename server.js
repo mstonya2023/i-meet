@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('method'));
 
 app.use(session({
-  secret: process.env.GOOGLE_SECRET,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true
 }));

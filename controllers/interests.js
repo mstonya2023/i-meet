@@ -1,28 +1,23 @@
 const Interest = require('../models/interest');
 module.exports = {
 
- index,
- create
+  index,
+  create
 
 };
 
 async function index(req, res) {
-    const movies = await Interest.find({});
-    res.render('/interests/index', { title: 'Interests', interests });
+  const interests = await Interest.find({});
+  res.render('interests/index', { title: 'Interests', interests });
+}
+
+async function create(req, res) {
+  try {
+    await Interest.create(req.body);
+  } catch (e) {
+    console.log(e.message);
   }
- 
-  async function create(req, res) {
-    const Interests = new Interest(req.body);
-    // Assign the logged in user's id
-    Interest.userRecommending = req.user._id;
-    try {
-      await Interest.save();
-     
-      res.redirect('/interests');
-    } catch (e) {
-      console.log(e.message);
-     res.redirect(`/interests`);
-    }
-  }
+  res.redirect(`/interests`);
+}
 
 
