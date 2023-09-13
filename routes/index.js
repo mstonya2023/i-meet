@@ -5,7 +5,7 @@ const passport = require ('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Express' });
+  res.render('home', { title: 'Imeet' });
 });
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
@@ -16,17 +16,24 @@ router.get('/auth/google', passport.authenticate(
     scope: ['profile', 'email'],
     // Optionally force pick account every time
     // prompt: "select_account"
-    successRedirect: '/imeet',
-    failureRedirect: '/imeet'  
   }
-))// OAuth logout route
+));
+
+// Google OAuth callback route
+router.get('/oauth2callback', passport.authenticate(
+  'google',
+  {
+    successRedirect: '/interests',
+    failureRedirect: '/interests'
+  }
+));
+
+// OAuth logout route
 router.get('/logout', function(req, res){
   req.logout(function() {
-    res.redirect('/imeet');
+    res.redirect('/interests');
   });
 });
 
-
-
-
 module.exports = router;
+

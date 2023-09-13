@@ -11,11 +11,12 @@ require('dotenv').config();
 // connect to the database with AFTER the config vars are processed
 require('./config/database');
 require('./config/passport');
+// middleware to protect all routes from anonymous visitors
+const ensureLoggedIn = require('./config/ensureLoggedIn');
 
-
-var indexRouter = require('./routes/index');
-var interestsRouter = require('./routes/interests');
-var postsRouter = require('/routes/posts');
+const indexRouter = require('./routes/index');
+const interestsRouter = require('./routes/interests');
+const postsRouter = require('./routes/posts');
 
 var app = express();
 
@@ -32,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('method'));
 
 app.use(session({
-  secret: process.env.SECRET,
+  secret: process.env.GOOGLE_SECRET,
   resave: false,
   saveUninitialized: true
 }));
@@ -44,10 +45,11 @@ app.use(function (req, res, next) {
   res.locals.user = req.user;
   next();
 });
+// middleware to protect all routes from anonymous visitors
 
 app.use('/', indexRouter);
-app.use('/interests', interestsRouter);
-app.use('/posts', postsRouter);
+app.use('/interests', ensureLoggedIn, interestsRouter);  
+app.use('/posts', ensureLoggedIn, postsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
