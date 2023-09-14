@@ -4,10 +4,13 @@ const Schema = mongoose.Schema;
 
 
 const postSchema = new Schema({
-    
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'
+    },
+    description: {
+        type: String,
+        required: true
     },
     interests: [{
         type: Schema.Types.ObjectId,

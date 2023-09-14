@@ -9,17 +9,14 @@
 </head>
 
 <body>
-  <nav>
     <nav>
       <img src="/images/camera.svg">
       <% if (user) { %>
         <a href="/interests" <%- title==='Interests' ? 'class="active"' : '' %>>Interests</a>
+        <a href="/posts/new" <%- title==='Add iMeet' ? 'class="active"' : '' %>>Add iMeet</a>
         <a href="/logout">LOG OUT</a>
         <% } else { %>
           <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
           <% } %>
     </nav>
-  </nav>
-</body>
-
-</html>
+    <h1><%= title %></h1>

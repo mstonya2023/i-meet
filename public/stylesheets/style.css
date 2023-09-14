@@ -26,3 +26,9 @@ a {
 .login img {
   height: 30px;
 }
+
+form {
+  display: grid;
+  grid-template-columns: 10rem 20rem;
+  gap: 1rem;
+}
