@@ -1,7 +1,5 @@
 # <i-Meet>
 
-<img src="https://i.imgur.com/bZXNmRq.png">
-
 The name of this app resource is **iMeet**. The purpose of this app to connect participants who have similar interests and want to connect with others that share the same. Each user hav the opportunity to  _Post Interests and Schedule iMeets_ if they choose. The user information is protected through Oauthorization so their personal details will not be comprised during the app.  
 # Screenshot
 
