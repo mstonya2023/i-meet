@@ -11,7 +11,7 @@ The name of this app resource is **iMeet**. The purpose of this app to connect p
 - JavaScript
 - HTML
 - CSS
-- Mongooose DB
+- Mongo DB
 - Node.js
 - Express
 - Heroku
