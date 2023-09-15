@@ -5,13 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title>Document</title>
+  <title>iMeet</title>
 </head>
 
 <body>
     <nav>
-      <img src="/images/camera.svg">
+      
       <% if (user) { %>
+        <a href="/posts" <%- title==='All iMeets' ? 'class="active"' : '' %>>All iMeets</a>
         <a href="/interests" <%- title==='Interests' ? 'class="active"' : '' %>>Interests</a>
         <a href="/posts/new" <%- title==='Add iMeet' ? 'class="active"' : '' %>>Add iMeet</a>
         <a href="/logout">LOG OUT</a>

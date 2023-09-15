@@ -1,19 +1,24 @@
 <%- include('../partials/header') %>
-
-<form action="/posts" method="POST">
-  <label>Description</label>
-  <textarea name="description"></textarea>
-  <label>Interests</label>
-  <select  name="interests" multiple>
-    <% interests.forEach(function(interest) { %>
-      <option value="<%= interest._id %>"> <%= interest.name %> </option>
-    <% }) %>
-  </select>
-  <label>Zipcode</label>
-  <input type="text" name="zipcode" pattern="\d{5}">
-  <label>Date/Time</label>
-  <input type="datetime-local" name="when">
-  <button type="submit">Add iMeet</button>
-</form>
-
-<%- include('../partials/footer') %>
+  <div class="details">
+    <form action="/posts" method="POST">
+      <label>Title</label>
+      <textarea name="title"></textarea>
+      <label>Description</label>
+      <textarea name="description"></textarea>
+      <label>Interests</label>
+      <select name="interests" multiple>
+        <% interests.forEach(function(interest) { %>
+          <option value="<%= interest._id %>">
+            <%= interest.name %>
+          </option>
+          <% }) %>
+      </select>
+      <label>Zipcode</label>
+      <input type="text" name="zipcode" pattern="\d{5}">
+      <label>Date/Time</label>
+      <input type="datetime-local" name="when">
+      <button type="submit">Add iMeet</button>
+    </form>
+  </div>
+  <%- include('../partials/footer') %>
+    </div>

@@ -17,7 +17,7 @@ async function create(req, res) {
   } catch (e) {
     console.log(e.message);
   }
-  res.redirect(`/interests`);
+  res.redirect(`/posts/new`);
 }
 
 

@@ -2,7 +2,15 @@
   box-sizing: border-box;
   font-family: Helvetica;
 }
-
+header {
+  background-color: crimson;
+}
+nav {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px; 
+}
 
 body {
   margin: 0;
@@ -10,7 +18,8 @@ body {
   display: grid;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image:;
+ 
+ 
 }
 
 a {
@@ -18,8 +27,8 @@ a {
 }
 .login {
   display: flex;
-  justify-content: right;
-  align-items: right;
+  justify-content: center;
+  align-items: center;
   height: 34px;
 }
 
@@ -31,4 +40,8 @@ form {
   display: grid;
   grid-template-columns: 10rem 20rem;
   gap: 1rem;
+} 
+
+.home {
+ 
 }

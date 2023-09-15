@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+    <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+        <label>Title</label>
+        <textarea name="title"><%= post.title %></textarea>
+        <label>Description</label>
+        <textarea name="description"><%= post.description %></textarea>
+        <label>Interests</label>
+        <select name="interests" multiple>
+            <% interests.forEach(function(interest) { %>
+                <option value="<%= interest._id %>" <%=post.interests.some(i=> i._id.equals(interest._id)) ? 'selected'
+                    : '' %> >
+                    <%= interest.name %>
+                </option>
+                <% }) %>
+        </select>
+        <label>Zipcode</label>
+        <input type="text" name="zipcode" value="<%= post.zipcode %>" pattern="\d{5}">
+        <label>Date/Time</label>
+        <input type="datetime-local" name="when" value="<%= post.when.toISOString().slice(0,16) %>">
+        <button type="submit">Update iMeet</button>
+    </form>
+
+    <%- include('../partials/footer') %>
+        </div>
