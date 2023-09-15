@@ -1,47 +1,150 @@
-*{
+* {
   box-sizing: border-box;
   font-family: Helvetica;
 }
-header {
-  background-color: crimson;
-}
+
 nav {
-  margin: 20px;
+  display: flex;
+  background-color: #fb0413;
+  height: 3rem;
+  margin: 0;
   text-decoration: none;
   padding: 10px;
-  border-radius: 5px; 
+  border-radius: 5px;
+  gap: 1rem;
+  max-width: 85rem;
+
+}
+
+body>img {
+  height: 10rem;
+  margin: 0
+}
+
+body>div {
+  font-size: large;
+  color: dodgerblue;
+  max-width: 50rem;
+
+}
+
+body>p {
+  color: dodgerblue;
+  font-size: large;
+  row-gap: 1rem;
+  max-width: 50rem;
 }
 
 body {
+  background-image: url("/images/mapbg.png");
+  background-size: 40rem;
   margin: 0;
   height: 5vh;
   display: grid;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
- 
- 
+}
+
+select {
+  color: dodgerblue;
+  font-size: large;
+}
+
+input {
+  color: dodgerblue;
+  font-size: medium;
+
+}
+
+form>textarea {
+  color: dodgerblue;
+  font-size: large;
+}
+
+label {
+  color: dodgerblue;
+}
+
+footer {
+  display: flex;
+  background-color: #fb0413;
+  margin-bottom: 20rem;
+  height: 2rem;
+  color: white
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+  background-color: #fb0413;
+  font-size: large;
+  font-weight: 4px;
+  max-width: 85rem;
+
 }
+
+
 .login {
   display: flex;
+  height: 2rem;
   justify-content: center;
-  align-items: center;
-  height: 34px;
+
+
 }
 
 .login img {
-  height: 30px;
+  display: grid;
+  height: 2rem;
+
+
 }
 
 form {
   display: grid;
+
   grid-template-columns: 10rem 20rem;
   gap: 1rem;
-} 
+  max-width: 50rem;
+  font-size: large;
+}
 
-.home {
- 
+h1 {
+  color: white;
+  background-color: dodgerblue;
+  max-width: 85rem;
+  font-size: large;
+  justify-content: left;
+  align-items: left;
+  column-gap: 2rem;
+
+}
+
+div.home>img {
+  margin-left: 30rem;
+  margin-bottom: 40rem;
+  height: 40rem;
+  justify-content: right;
+
+}
+
+p {
+  column-gap: -3rem;
+  width: 100rem;
+  word-spacing: 0%;
+  font-size: medium;
+  color: black;
+}
+
+form>button {
+  color: #fb0413;
+  max-width: 10rem;
+
+}
+
+button:hover {
+  color: dodgerblue;
+}
+
+img {
+  display: grid;
+  grid-template-columns: 10rem 20rem;
 }
